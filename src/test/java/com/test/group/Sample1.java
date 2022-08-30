@@ -13,6 +13,22 @@ import com.test.page.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Sample1 extends BaseClass {
+	
+	@Parameters("browser")
+	public void tc3(String browser) {
+if (browser.equals("chrome")) {
+	WebDriverManager.chromedriver().setup();
+	WebDriver driver=new ChromeDriver();
+	driver.get("http://adactinhotelapp.com/");
+} else if (browser.equals("edge")) {
+	WebDriverManager.edgedriver().setup();
+	WebDriver driver=new EdgeDriver();
+	driver.get("http://adactinhotelapp.com/");
+}else if (browser.equals("firefox")) {
+	WebDriverManager.firefoxdriver().setup();
+	WebDriver driver=new FirefoxDriver();
+	driver.get("http://adactinhotelapp.com/");
+}}
 	@Parameters("browser")
 	public void tc0(String browser) {
 if (browser.equals("chrome")) {
